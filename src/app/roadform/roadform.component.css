@@ -1,0 +1,57 @@
+.form-panel{
+    padding: 0px 20px;
+    font-size: 15px;
+}
+.button-bottom{
+    background-color: rgba(0,0,0,.03);
+}
+.btn-save{
+    background-color: rgb(213,80,135);
+    width: 6% !important;
+}
+.btn-info{
+    width: 8% !important;
+}
+.btn-cancel{
+
+}
+.white{
+    color: #fff;
+}
+.panel-border{
+    background-color: rgb(235,239,243);
+}
+a{
+    text-decoration: underline;
+}
+.text-danger{
+    font-size: 80%;
+}
+.btn{
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+.btn.focus, .btn:focus{
+    box-shadow: none;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-size: 14px;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    font-size: 14px;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    font-size: 14px;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    font-size: 14px;
+  }
+  .form-check{
+    border: 1px solid #ced4da;
+    width: 46%;
+  }
+  .form-check-label{
+    padding-left: 20px;
+  }
+  

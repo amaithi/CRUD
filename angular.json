@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "formvalidation"
+    }
+  },
+  "defaultProject": "formvalidation",
+  "cli": {
+    "analytics": "634a599a-2b41-4e6a-a0d5-23c29bd40368"
+  }
 }

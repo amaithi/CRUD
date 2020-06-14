@@ -1,0 +1,346 @@
+<div  class="container">
+  <form class="needs-validation" (ngSubmit)="validSubmit()" [formGroup]="validationform">
+    <div>
+      <h3 class="pl-4">Road Work History</h3>
+    </div>
+    <div class="accordion p-4 panel-border" id="accordionExample">
+      
+      <div class="card z-depth-0 bordered ">
+        <div>
+          
+          <button class="btn pt-4 pb-2 pl-4" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <span class="text-danger">* </span> Fields are Mandatory
+            <i id="collapseOne" aria-labelledby="headingOne"data-parent="#accordionExample" class="float-right fa fa-angle-up collapse  hide"></i>
+            <i id="collapseOne" aria-labelledby="headingOne"data-parent="#accordionExample" class="float-right fa fa-angle-down collapse  show"></i>
+         
+          </button>
+        </div>
+        <div id="collapseOne" class="collapse form-panel show" aria-labelledby="headingOne"data-parent="#accordionExample">
+          <hr class="mt-1 mb-1">
+          <!-- Row Start -->
+          <div class="row">
+            <div class="card-body pt-1 col-lg-12">
+              <a href="#">Click Here to Open Map</a>
+            </div>
+          </div>
+          <!-- Row End -->
+          <!-- Row Start -->
+          <div class="row">
+            <div class="card-body pt-2 col-lg-3">
+              <span class="text-danger">* </span><label> Zone</label>
+              <select class="custom-select"  [ngClass]="{'is-invalid': submit && form.zone.errors?.required}"   formControlName="zone" name="zone" (change)="changeItem($event)">
+                <option value="" disabled>-Select-</option>
+                <option *ngFor="let zoneitem of zonelist" [ngValue]="zoneitem">{{zoneitem}}</option>
+              </select>
+              <div *ngIf="submit && form.zone.errors?.required" class="text-danger">
+                Please select a Zone.
+              </div>
+            </div>
+            <div class="card-body pt-2 col-lg-3">
+              <span class="text-danger">* </span><label> Ward</label>
+              <select class="custom-select" [ngClass]="{'is-invalid': submit && form.ward.errors?.required}"  formControlName="ward">
+                <option value="" disabled>-Select-</option>
+                <option *ngFor="let warditem of wardlist" [ngValue]="warditem">{{warditem}}</option>
+              </select>
+              <div *ngIf="submit && form.ward.errors" class="text-danger">
+                <span *ngIf="form.ward.errors.required">Please select a Ward.</span>
+              </div>
+            </div>
+            <div class="card-body pt-2 col-lg-3">
+              <span class="text-danger">* </span><label> Street Name</label>
+              <select class="custom-select" [ngClass]="{'is-invalid': submit && form.streetname.errors?.required}" formControlName="streetname">
+                <option value="" disabled>-Select-</option>
+                <option *ngFor="let streetnameitem of streetnamelist" [ngValue]="streetnameitem">{{streetnameitem}}</option>
+              </select>
+              <div *ngIf="submit && form.streetname.errors" class="text-danger">
+                <span *ngIf="form.streetname.errors.required">Please provide a Street Name.</span>
+              </div>
+            </div>
+            <div class="card-body pt-2 col-lg-3">
+              <span class="text-danger">* </span><label> Significant Landmark</label>
+              <input type="text"  class="form-control" placeholder="Significant Landmark" formControlName="significantlandmark" [ngClass]="{'is-invalid': submit && form.significantlandmark.errors}">
+              <div *ngIf="submit && form.significantlandmark.errors" class="invalid-feedback">
+                <span *ngIf="form.significantlandmark.errors.required">Please provide a Significant Landmark.</span>
+              </div>
+            </div>
+          </div>
+          <!-- Row End -->
+          <!-- Row Start -->
+          <div class="row">
+            <div class="card-body pt-2 col-lg-3">
+              <span class="text-danger">* </span><label> Segment No</label>
+              <input type="text" placeholder="Segment" class="form-control" placeholder="Segment No" formControlName="segment" [ngClass]="{'is-invalid': submit && form.segment.errors}">
+              
+              <div *ngIf="submit && form.segment.errors" class="invalid-feedback">
+                <span *ngIf="form.segment.errors.required">Please provide a segment no.</span>
+                <span *ngIf="form.segment.errors.pattern">This value should be a valid number.</span>
+              </div>
+            </div>
+            <div class="card-body pt-2 col-lg-3">
+              <span class="text-danger">* </span><label> Total Length (ln Mtr)</label>
+              <input type="text"  class="form-control" placeholder="Total Length (ln Mtr)" formControlName="totallength" [ngClass]="{'is-invalid': submit && form.totallength.errors}">
+              <div *ngIf="submit && form.totallength.errors" class="invalid-feedback">
+                <span *ngIf="form.totallength.errors.required">Please provide a Total Length.</span>
+                <span *ngIf="form.totallength.errors.pattern">This value should be a valid number.</span>
+              </div>
+            </div>
+          </div>
+          <!-- Row End -->
+          <hr>
+          <!-- Row Start -->
+          <div class="row">
+            <div class="card-body pt-2 col-lg-3">
+              <span class="text-danger">* </span><label> Seg No</label>
+              <input type="text" placeholder="Seg No" class="form-control"  formControlName="segno" [ngClass]="{'is-invalid': submit && form.segno.errors}">
+              <div *ngIf="submit && form.segno.errors" class="invalid-feedback">
+                <span *ngIf="form.segno.errors.required">Please provide a seg no.</span>
+                <span *ngIf="form.segno.errors.pattern">This value should be a valid number.</span>
+              </div>
+            </div>
+            <div class="card-body pt-2 col-lg-3">
+              <span class="text-danger">* </span><label> Length (ln Mtr)</label>
+              <input type="text"  class="form-control" placeholder="Length (ln Mtr)" formControlName="lengthmtr" [ngClass]="{'is-invalid': submit && form.lengthmtr.errors}">
+              <div *ngIf="submit && form.lengthmtr.errors" class="invalid-feedback">
+                <span *ngIf="form.lengthmtr.errors.required">Please provide a Length.</span>
+                <span *ngIf="form.lengthmtr.errors.pattern">This value should be a valid number.</span>
+              </div>
+            </div>
+            <div class="card-body pt-2 col-lg-3">
+              <span class="text-danger">* </span><label> Start Coordinates(Lat-Long)</label>
+              <input type="text"  class="form-control" placeholder="Start Coordinates(Lat-Long)" formControlName="startcoodinates" [ngClass]="{'is-invalid': submit && form.startcoodinates.errors}">
+              <div *ngIf="submit && form.startcoodinates.errors" class="invalid-feedback">
+                <span *ngIf="form.startcoodinates.errors.required">Please provide a Start Coordinates.</span>
+                <span *ngIf="form.startcoodinates.errors.pattern">This value should be a valid number.</span>
+              </div>
+            </div>
+            <div class="card-body pt-2 col-lg-3">
+              <span class="text-danger">* </span><label> End Coordinates(Lat-Long)</label>
+              <input type="text"  class="form-control" placeholder="End Coordinates(Lat-Long)" formControlName="endcoodinates" [ngClass]="{'is-invalid': submit && form.endcoodinates.errors}">
+                <div *ngIf="submit && form.endcoodinates.errors" class="invalid-feedback">
+                  <span *ngIf="form.endcoodinates.errors.required">Please provide a End Coordinates.</span>
+                  <span *ngIf="form.endcoodinates.errors.pattern">This value should be a valid number.</span>
+                </div>
+            </div>
+          </div>
+          <!-- Row End -->
+          <!-- Row Start -->
+          <div class="row">
+            <div class="card-body pt-2 col-lg-3">
+              <span class="text-danger">* </span><label> From Landmark</label>
+              <input type="text" placeholder="From Landmark" class="form-control"  formControlName="fromlandmark" [ngClass]="{'is-invalid': submit && form.fromlandmark.errors}">
+                <div *ngIf="submit && form.fromlandmark.errors" class="invalid-feedback">
+                  <span *ngIf="form.fromlandmark.errors.required">Please provide a From Landmark.</span>
+                </div>
+            </div>
+            <div class="card-body pt-2 col-lg-3">
+              <span class="text-danger">* </span><label> To Landmark</label>
+              <input type="text"  class="form-control" placeholder="To Landmark" formControlName="tolandmark" [ngClass]="{'is-invalid': submit && form.tolandmark.errors}">
+              <div *ngIf="submit && form.tolandmark.errors" class="invalid-feedback">
+                <span *ngIf="form.tolandmark.errors.required">Please provide a To Landmark.</span>
+              </div>
+            </div>
+          </div>
+          <!-- Row End -->
+          <hr>
+          <!-- Row Start -->
+          <div class="row">
+            <div class="card-body pt-2 col-lg-3">
+              <span class="text-danger">* </span><label> Name of Work</label>
+              <input type="text" placeholder="Name of Work" class="form-control"  formControlName="nameofwork" [ngClass]="{'is-invalid': submit && form.nameofwork.errors}">
+              <div *ngIf="submit && form.nameofwork.errors" class="invalid-feedback">
+                <span *ngIf="form.nameofwork.errors.required">Please provide a Name of Work.</span>
+              </div>
+            </div>
+            <div class="card-body pt-2 col-lg-3">
+              <span class="text-danger">* </span><label> Type of Work</label>
+              <select class="custom-select"  [ngClass]="{'is-invalid': submit && form.typeofwork.errors?.required}"   formControlName="typeofwork" name="typeofwork" (change)="changeItem($event)">
+                <option value="" disabled>-Select-</option>
+                <option *ngFor="let typeofworkitem of typeofworklist" [ngValue]="typeofworkitem">{{typeofworkitem}}</option>
+              </select>
+              <div *ngIf="submit && form.typeofwork.errors?.required" class="text-danger">
+                Please select a Type of Work.
+              </div>
+            </div>
+            <div class="card-body pt-2 col-lg-3">
+              <span class="text-danger">* </span><label> Other Work types </label>
+              <input type="text"  class="form-control" placeholder="Other Work types" formControlName="otherworktype" [ngClass]="{'is-invalid': submit && form.otherworktype.errors}">
+              <div *ngIf="submit && form.otherworktype.errors" class="invalid-feedback">
+                <span *ngIf="form.otherworktype.errors.required">Please provide a Other Work types.</span>
+              </div>
+            </div>
+            <div class="card-body pt-2 col-lg-3">
+              <span class="text-danger">* </span><label> Tender</label>
+              <select class="custom-select"  [ngClass]="{'is-invalid': submit && form.tender.errors?.required}"   formControlName="tender" name="tender" (change)="changeItem($event)">
+                <option value="" disabled>-Select-</option>
+                <option *ngFor="let tenderitem of tenderlist" [ngValue]="tenderitem">{{tenderitem}}</option>
+              </select>
+              <div *ngIf="submit && form.tender.errors?.required" class="text-danger">
+                Please select a Tender.
+              </div>
+            </div>
+          </div>
+          <!-- Row Start -->
+          <!-- Row End -->
+          <div class="row">
+            <div class="card-body pt-2 col-lg-3">
+              <span class="text-danger">* </span><label> Sanctioned Estimated Amount</label>
+              <input type="text" placeholder="Estimated Amount(In Rs.)" class="form-control"  formControlName="estimatedamount" [ngClass]="{'is-invalid': submit && form.estimatedamount.errors}">
+              <div *ngIf="submit && form.estimatedamount.errors" class="invalid-feedback">
+                <span *ngIf="form.estimatedamount.errors.required">Please provide a Sanctioned Estimated Amount.</span>
+                <span *ngIf="form.estimatedamount.errors.pattern">This value should be a valid number.</span>
+              </div>
+            </div>
+            <div class="card-body pt-2 col-lg-3">
+              <span class="text-danger">* </span><label> Sanctioned Year</label>
+              <input type="text"  class="form-control" placeholder="Year" formControlName="sanctionedyear" [ngClass]="{'is-invalid': submit && form.sanctionedyear.errors}">
+              <div *ngIf="submit && form.sanctionedyear.errors" class="invalid-feedback">
+                <span *ngIf="form.sanctionedyear.errors.required">Please provide a Sanctioned Year.</span>
+              </div>
+            </div>
+            <div class="card-body pt-2 col-lg-3">
+              <span class="text-danger">* </span><label> Year</label>
+              <select class="custom-select"  [ngClass]="{'is-invalid': submit && form.year.errors?.required}"   formControlName="year" name="year" (change)="changeItem($event)">
+                <option value="" disabled>-Select-</option>
+                <option *ngFor="let yearitem of yearlist" [ngValue]="yearitem">{{yearitem}}</option>
+              </select>
+              <div *ngIf="submit && form.year.errors?.required" class="text-danger">
+                Please select a Year.
+              </div>
+            </div>
+            <div class="card-body pt-2 col-lg-3">
+              <span class="text-danger">* </span><label> Work Order No</label>
+              <input type="text"  class="form-control" placeholder="Work Order No" formControlName="workorderno" [ngClass]="{'is-invalid': submit && form.workorderno.errors}">
+              <div *ngIf="submit && form.workorderno.errors" class="invalid-feedback">
+                <span *ngIf="form.workorderno.errors.required">Please provide a Work Order No.</span>
+              </div>
+            </div>
+          </div>
+          <!-- row End -->
+          <!-- Row Start -->
+          <div class="row">
+            <div class="card-body pt-2 col-lg-3">
+              <span class="text-danger">* </span><label> Job No/Work Code</label>
+              <input type="text" placeholder="Work Code" class="form-control"  formControlName="workcode" [ngClass]="{'is-invalid': submit && form.workcode.errors}">
+              <div *ngIf="submit && form.workcode.errors" class="invalid-feedback">
+                <span *ngIf="form.workcode.errors.required">Please provide a Job No/Work Code.</span>
+              </div>
+            </div>
+            <div class="card-body pt-2 col-lg-3">
+              <span class="text-danger">* </span><label> Work Order Date</label>
+              <input type="text"  class="form-control" placeholder="Work Order Date" formControlName="workorderdate" [ngClass]="{'is-invalid': submit && form.workorderdate.errors}">
+              <div *ngIf="submit && form.workorderdate.errors" class="invalid-feedback">
+                <span *ngIf="form.workorderdate.errors.required">Please provide a Work Order Date.</span>
+              </div>
+            </div>
+            <div class="card-body pt-2 col-lg-3">
+              <span class="text-danger">* </span><label> Defect Liability Period From</label>
+              <input type="text"  class="form-control" placeholder="Period From" formControlName="periodfrom" [ngClass]="{'is-invalid': submit && form.periodfrom.errors}">
+              <div *ngIf="submit && form.periodfrom.errors" class="invalid-feedback">
+                <span *ngIf="form.periodfrom.errors.required">Please provide a Defect Liability Period From.</span>
+              </div>
+            </div>
+            <div class="card-body pt-2 col-lg-3">
+              <span class="text-danger">* </span><label> Defect Liability Period To</label>
+              <input type="text"  class="form-control" placeholder="Period To" formControlName="periodto" [ngClass]="{'is-invalid': submit && form.periodto.errors}">
+              <div *ngIf="submit && form.periodto.errors" class="invalid-feedback">
+                <span *ngIf="form.periodto.errors.required">Please provide a Defect Liability Period to.</span>
+              </div>
+            </div>
+          </div>
+          <!-- Row End -->
+          <!-- Row Start -->
+          <div class="row">
+            <div class="card-body pt-2 col-lg-3">
+              <span class="text-danger">* </span><label> Period of Estention</label>
+              <input type="text" placeholder="Period of Estention" class="form-control"  formControlName="periodofestention" [ngClass]="{'is-invalid': submit && form.periodofestention.errors}">
+              <div *ngIf="submit && form.periodofestention.errors" class="invalid-feedback">
+                <span *ngIf="form.periodofestention.errors.required">Please provide a Period of Estention.</span>
+              </div>
+            </div>
+            <div class="card-body pt-2 col-lg-6">
+              <span class="text-danger">* </span><label> Multiple road involved with same Job No/Work No</label>
+              <div class="form-check pb-2 pt-2">
+                <input type="radio" class="form-check-input with-gap ml-1" id="radioGap1" name="groupOfRadioGap">
+                <label class="form-check-label " for="radioGap1">Yes</label>
+                <input type="radio" class="form-check-input with-gap ml-1" id="radioGap2" name="groupOfRadioGap" checked>
+                <label class="form-check-label" for="radioGap2">No</label>
+              </div>
+          
+              
+            </div>
+          </div>
+          <!-- Row End -->
+          <!-- Row Start -->
+          <div class="row">
+            <div class="col-lg-1">
+            </div>
+            <div class="card-body pt-2 center col-lg-10">
+              <span class="text-danger pl-2">* </span><label> Work Details</label>
+              <div class="col-lg-12">
+                <textarea class="form-control" rows="2" id="example-textarea" formControlName="workdetails" [ngClass]="{'is-invalid': submit && form.workdetails.errors}"></textarea>
+              </div>
+              <div *ngIf="submit && form.workdetails.errors" class="text-danger">
+                <span *ngIf="form.workdetails.errors.required">Please provide a Work Details.</span>
+              </div>
+            </div>
+          </div>
+          <!-- Row End -->
+          <hr>
+          <!-- Row Start -->
+          <div class="row">
+            <div class="card-body pt-2 col-lg-4">
+              <span class="text-danger">* </span><label> Name of Contractor</label>
+              <input type="text"  class="form-control" placeholder="Name of Contractor" formControlName="nameofcontractor" [ngClass]="{'is-invalid': submit && form.nameofcontractor.errors}">
+              <div *ngIf="submit && form.nameofcontractor.errors" class="invalid-feedback">
+                <span *ngIf="form.nameofcontractor.errors.required">Please provide a Name of Contractor.</span>
+              </div>
+            </div>
+            <div class="card-body pt-2 col-lg-4">
+              <span class="text-danger">* </span><label> Contractor Reg No.(BBMP/PWD)</label>
+              <input type="text"  class="form-control" placeholder="Contractor Reg No" formControlName="contractorregno" [ngClass]="{'is-invalid': submit && form.contractorregno.errors}">
+              <div *ngIf="submit && form.contractorregno.errors" class="invalid-feedback">
+                <span *ngIf="form.contractorregno.errors.required">Please provide a Contractor Reg No.</span>
+              </div>
+            </div>
+            <div class="card-body pt-2 col-lg-4">
+              <span class="text-danger">* </span><label> Expenditure Booked/Released(Rs)</label>
+              <input type="text"  class="form-control" placeholder="Expenditure Booked" formControlName="expenditurebooked" [ngClass]="{'is-invalid': submit && form.expenditurebooked.errors}">
+              <div *ngIf="submit && form.expenditurebooked.errors" class="invalid-feedback">
+                <span *ngIf="form.expenditurebooked.errors.required">Please provide a Expenditure Booked/Released.</span>
+              </div>
+            </div>
+          </div>
+          <!-- Row End -->
+          <!-- Row Start -->
+          <div class="row">
+            <div class="card-body pt-2 col-lg-4">
+              <span class="text-danger">* </span><label> Phone No</label>
+              <input type="text"  class="form-control" placeholder="Phone No" formControlName="phoneno" [ngClass]="{'is-invalid': submit && form.phoneno.errors}">
+              <div *ngIf="submit && form.phoneno.errors" class="invalid-feedback">
+                <span *ngIf="form.phoneno.errors.required">Please provide a Phone No.</span>
+                <span *ngIf="form.phoneno.errors.pattern">This value should be a valid number.</span>
+                
+              </div>
+            </div>
+            <div class="card-body pt-2 col-lg-4">
+              <label>Email ID</label>
+              <input type="text"  class="form-control" placeholder="Email ID" formControlName="emailid" [ngClass]="{'is-invalid': submit && form.emailid.errors}">
+              
+            </div>
+            
+          </div>
+          <!-- Row End -->
+          <div class="row">
+            <div class="card-body pt-2 col-lg-12 button-bottom">
+              <button type="reset" class="float-right btn btn-info">Cancel</button>
+              <button type="submit" class="float-right btn btn-save mr-2 white">Save</button>
+            </div>
+
+          </div>
+        </div>
+        <!-- Collapse End -->
+      </div>
+    </div>
+  </form>
+  <!-- Form End -->
+</div>

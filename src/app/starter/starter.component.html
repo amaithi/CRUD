@@ -1,0 +1,600 @@
+
+ <div class="container-fluid">
+    <div> <br> <br> <br>  </div>
+    <div class="row">
+      
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <ngb-tabset type="pills"  class="navtab-bg " >
+              <ngb-tab title="Reason For New Work">
+                <ng-template ngbTabContent class="nav-item">
+                  
+                  <div class="container-fluid">
+                    <div class="row page-title align-items-center">
+                        <div class="col-12">
+                          <div class="row">
+                            <div class="col-12">
+                              <div class="text mb-3">
+                                <!-- <h4 class="mb-1 mt-0"><i class='uil uil-users-alt'></i> Reason For New Work</h4> -->
+                              </div>
+                            </div>
+                          </div>
+                            <div class="formbox p-5" style="background-color:white; padding:15px; width:100%; ">
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                  <h4 class="mb-1 mt-0">
+                                    <h3 style="color: red;display: inline; " >*</h3>
+                                    Fields are Mandatory
+                                 </h4>
+                                        <form class="needs-validation" (ngSubmit)="Submit6()" [formGroup]="Workform" >
+                                          <br>
+                                          <div class="row pb-4">
+                                            <div class="col-lg-2">
+                                              <div><span class="text-danger">* </span>  Reason For New Work</div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                               <input type="text" class="form-control" placeholder="Reason" formControlName="reasonfornewwork" [ngClass]="{'is-invalid': submit6 && form6.reasonfornewwork.errors}">
+                                               <div *ngIf="submit6 && form6.reasonfornewwork.errors?.required" class="text-danger">
+                                                  Please provide a Reason For New Work.
+                                               </div>
+                                            </div>
+                                         </div>
+                                         <div class="row pb-4">
+                                            <div class="col-lg-2">
+                                              <div><span class="text-danger">* </span>  Description</div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                              <input type="text" class="form-control" placeholder="Description" formControlName="description" [ngClass]="{'is-invalid': submit6 && form6.description.errors}">
+                                              <div *ngIf="submit6 && form6.description.errors?.required" class="text-danger">
+                                                Please provide a Description.
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="row pb-4">
+                                            <div class="buttons col-lg-3 text-center box mb-3" style="display:inline-block;width:100%">
+                                               <button class="btn btn-info mr-3" type="submit" >Save</button>
+                                               <button class="btn btn-secondary ">New</button>
+                                            </div>
+                                         </div>
+                                        </form>
+                                </div>
+                            </div>
+                  
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  
+                  
+                  
+                </ng-template>
+              </ngb-tab>
+              <ngb-tab title="Road Material">
+                <ng-template ngbTabContent class="nav-item">
+                  <!-- <h5 class="mt-3">Road Material</h5> -->
+                  <div class="container-fluid">
+                    <div class="row page-title align-items-center">
+                        <div class="col-12">
+                          <div class="row">
+                            <div class="col-12">
+                              <div class="text mb-3">
+                                <!-- <h4 class="mb-1 mt-0"><i class='uil uil-users-alt'></i> Road Material</h4> -->
+                              </div>
+                            </div>
+                          </div>
+                            <div class="formbox p-5" style="background-color:white; padding:15px; width:100%; ">
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                  <h4 class="mb-1 mt-0">
+                                    <h3 style="color: red;display: inline; " >*</h3>
+                                    Fields are Mandatory
+                                 </h4>
+                                        <form class="needs-validation" (ngSubmit)="Submit7()" [formGroup]="Materialform" >
+                                          <br>
+                                          <div class="row pb-4">
+                                            <div class="col-lg-2">
+                                              <div><span class="text-danger">* </span> Road Material</div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                               <input type="text" class="form-control" placeholder="Road Material" formControlName="roadmaterial" [ngClass]="{'is-invalid': submit7 && form7.roadmaterial.errors}">
+                                               <div *ngIf="submit7 && form7.roadmaterial.errors?.required" class="text-danger">
+                                                  Please provide a Road Material.
+                                               </div>
+                                            </div>
+                                          </div>
+                                          <div class="row pb-4">
+                                            <div class="col-lg-2">
+                                              <div><span class="text-danger">* </span> Description</div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                               <input type="text" class="form-control" placeholder="Description" formControlName="description" [ngClass]="{'is-invalid': submit7 && form7.description.errors}">
+                                               <div *ngIf="submit7 && form7.description.errors?.required" class="text-danger">
+                                                  Please provide a Description.
+                                               </div>
+                                            </div>
+                                          </div>
+                                          <div class="row pb-4">
+                                            <div class="buttons col-lg-3 text-center box mb-3" style="display:inline-block;width:100%">
+                                               <button class="btn btn-info mr-3" type="submit" >Save</button>
+                                               <button class="btn btn-secondary ">New</button>
+                                            </div>
+                                         </div>
+                  
+                                        </form>
+                              
+                                </div>
+                                 
+                                
+                                
+                            </div>
+                  
+                             
+                            
+                            
+                            
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  
+                  
+                  
+                </ng-template>
+              </ngb-tab>
+              <ngb-tab title="Scheme">
+                <ng-template ngbTabContent class="nav-item">
+                  <!-- <h5 class="mt-3">Scheme</h5> -->
+                  <div class="container-fluid">
+                    <div class="row page-title align-items-center">
+                        <div class="col-12">
+                          <div class="row">
+                            <div class="col-12">
+                              <div class="text mb-3">
+                                <!-- <h4 class="mb-1 mt-0"><i class='uil uil-users-alt'></i>Scheme</h4> -->
+                              </div>
+                            </div>
+                          </div>
+                            <div class="formbox p-5" style="background-color:white; padding:15px; width:100%; ">
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                  <h4 class="mb-1 mt-0">
+                                    <h3 style="color: red;display: inline; " >*</h3>
+                                    Fields are Mandatory
+                                 </h4>
+                                        <form class="needs-validation" (ngSubmit)="Submit8()" [formGroup]="Schemeform" >
+                                          <br>
+                                          <div class="row pb-4">
+                                            <div class="col-lg-2">
+                                              <div><span class="text-danger">* </span> Scheme</div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                               <input type="text" class="form-control" placeholder="Scheme" formControlName="scheme" [ngClass]="{'is-invalid': submit8 && form8.scheme.errors}">
+                                               <div *ngIf="submit8 && form8.scheme.errors?.required" class="text-danger">
+                                                  Please provide a Scheme.
+                                               </div>
+                                            </div>
+                                         </div>
+                                         <div class="row pb-4">
+                                            <div class="col-lg-2">
+                                              <div><span class="text-danger">* </span> Description</div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                              <input type="text" class="form-control" placeholder="Description" formControlName="description" [ngClass]="{'is-invalid': submit8 && form8.description.errors}">
+                                              <div *ngIf="submit8 && form8.description.errors?.required" class="text-danger">
+                                                  Please provide a Description.
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="row pb-4">
+                                            <div class="buttons col-lg-3 text-center box mb-3" style="display:inline-block;width:100%">
+                                               <button class="btn btn-info mr-3" type="submit" >Save</button>
+                                               <button class="btn btn-secondary ">New</button>
+                                            </div>
+                                         </div>
+                                        </form>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </ng-template>
+              </ngb-tab>
+              <ngb-tab title="Street Type" class="nav nav-pills navtab-bg">
+                <ng-template ngbTabContent class="nav-item">
+                  <!-- <h5 class="mt-3">Street Type</h5> -->
+                  <div class="container-fluid">
+                    <div class="row page-title align-items-center">
+                        <div class="col-12">
+                          <div class="row">
+                            <div class="col-12">
+                              <div class="text mb-3">
+                                <!-- <h4 class="mb-1 mt-0"><i class='uil uil-users-alt'></i>Street Type</h4> -->
+                              </div>
+                            </div>
+                          </div>
+                            <div class="formbox p-5" style="background-color:white; padding:15px; width:100%; ">
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                  <h4 class="mb-1 mt-0">
+                                    <h3 style="color: red;display: inline; " >*</h3>
+                                    Fields are Mandatory
+                                 </h4>
+                                        <form class="needs-validation" (ngSubmit)="Submit9()" [formGroup]="Street_TYform" >
+                                          <br>
+                                          <div class="row pb-4">
+                                            <div class="col-lg-2">
+                                              <div><span class="text-danger">* </span> Street Type</div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                              <input type="text" class="form-control" placeholder="Street Type" formControlName="street_type" [ngClass]="{'is-invalid': submit9 && form9.street_type.errors}">
+                                              <div *ngIf="submit9 && form9.street_type.errors?.required" class="text-danger">
+                                                  Please provide a Street Type.
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="row pb-4">
+                                            <div class="col-lg-2">
+                                              <div><span class="text-danger">* </span> Description</div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                              <input type="text" class="form-control" placeholder="Description" formControlName="description" [ngClass]="{'is-invalid': submit9 && form9.description.errors}">
+                                              <div *ngIf="submit9 && form9.description.errors?.required" class="text-danger">
+                                                  Please provide a Description.
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="row pb-4">
+                                            <div class="buttons col-lg-3 text-center box mb-3" style="display:inline-block;width:100%">
+                                               <button class="btn btn-info mr-3" type="submit" >Save</button>
+                                               <button class="btn btn-secondary ">New</button>
+                                            </div>
+                                         </div>
+                  
+                                        </form>
+                              
+                                </div>
+                                 
+                                
+                                
+                            </div>
+                  
+                             
+                            
+                            
+                            
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  
+                  
+                  
+                  
+                </ng-template>
+              </ngb-tab>
+              <ngb-tab title="Work Type" class="nav nav-pills navtab-bg">
+                <ng-template ngbTabContent class="nav-item">
+                  <!-- <h5 class="mt-3">Work Type</h5> -->
+                  <div class="container-fluid">
+                    <div class="row page-title align-items-center">
+                        <div class="col-12">
+                          <div class="row">
+                            <div class="col-12">
+                              <div class="text mb-3">
+                                <!-- <h4 class="mb-1 mt-0"><i class='uil uil-users-alt'></i>Work Type</h4> -->
+                              </div>
+                            </div>
+                          </div>
+                            <div class="formbox p-5" style="background-color:white; padding:15px; width:100%; ">
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                  <h4 class="mb-1 mt-0">
+                                    <h3 style="color: red;display: inline; " >*</h3>
+                                    Fields are Mandatory
+                                 </h4>
+                                        <form class="needs-validation" (ngSubmit)="Submit10()" [formGroup]="Work_TYform" >
+                                          <br>
+                                          <div class="row pb-4">
+                                            <div class="col-lg-2">
+                                              <div><span class="text-danger">* </span> Work Type</div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                              <input type="text" class="form-control" placeholder="Work Type" formControlName="workktype" [ngClass]="{'is-invalid': submit10 && form10.workktype.errors}">
+                                              <div *ngIf="submit10 && form10.workktype.errors?.required" class="text-danger">
+                                                  Please provide a Work Type.
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="row pb-4">
+                                            <div class="col-lg-2">
+                                              <div><span class="text-danger">* </span> Description</div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                              <input type="text" class="form-control" placeholder="Description" formControlName="description" [ngClass]="{'is-invalid': submit10 && form10.description.errors}">
+                                              <div *ngIf="submit10 && form10.description.errors?.required" class="text-danger">
+                                                  Please provide a Description.
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="row pb-4">
+                                            <div class="buttons col-lg-3 text-center box mb-3" style="display:inline-block;width:100%">
+                                               <button class="btn btn-info mr-3" type="submit" >Save</button>
+                                               <button class="btn btn-secondary ">New</button>
+                                            </div>
+                                         </div>
+                  
+                                        </form>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </ng-template>
+              </ngb-tab>
+              <ngb-tab title="Existing Repair Conditions" class="nav nav-pills navtab-bg">
+                <ng-template ngbTabContent class="nav-item">
+                  <!-- <h5 class="mt-3">Existing Repair Conditions</h5> -->
+                  <div class="container-fluid">
+                    <div class="row page-title align-items-center">
+                        <div class="col-12">
+                          <div class="row">
+                            <div class="col-12">
+                              <div class="text mb-3">
+                                <!-- <h4 class="mb-1 mt-0"><i class='uil uil-users-alt'></i>Existing Repair Conditions</h4> -->
+                              </div>
+                            </div>
+                          </div>
+                            <div class="formbox p-5" style="background-color:white; padding:15px; width:100%; ">
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                  <h4 class="mb-1 mt-0">
+                                    <h3 style="color: red;display: inline; " >*</h3>
+                                    Fields are Mandatory
+                                 </h4>
+                                        <form class="needs-validation" (ngSubmit)="Submit11()" [formGroup]="ERCform" >
+                                          <br>
+                                          <div class="row pb-4">
+                                            <div class="col-lg-3">
+                                              <div><span class="text-danger">* </span> Existing Repair Conditions</div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                              <input type="text" class="form-control" placeholder="Existing Repair Conditions" formControlName="E_R_C" [ngClass]="{'is-invalid': submit11 && form11.E_R_C.errors}">
+                                              <div *ngIf="submit11 && form11.E_R_C.errors?.required" class="text-danger">
+                                                  Please provide a Existing Repair Conditions.
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="row pb-4">
+                                            <div class="col-lg-3">
+                                              <div><span class="text-danger">* </span> Description</div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                              <input type="text" class="form-control" placeholder="Description" formControlName="Description" [ngClass]="{'is-invalid': submit11 && form11.Description.errors}">
+                                              <div *ngIf="submit11 && form11.Description.errors?.required" class="text-danger">
+                                                  Please provide a Description.
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="row pb-4">
+                                            <div class="buttons col-lg-3 text-center box mb-3" style="display:inline-block;width:100%">
+                                               <button class="btn btn-info mr-3" type="submit" >Save</button>
+                                               <button class="btn btn-secondary ">New</button>
+                                            </div>
+                                         </div>
+                  
+                                        </form>
+                              
+                                </div>
+                                 
+                                
+                                
+                            </div>
+                  
+                             
+                            
+                            
+                            
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                 
+                </ng-template>
+              </ngb-tab>
+              <ngb-tab title="Constructor Details" class="nav nav-pills navtab-bg">
+                <ng-template ngbTabContent class="nav-item">
+                  <!-- <h5 class="mt-3">Constructor Details</h5> -->
+                  <div class="container-fluid">
+                    <div class="row page-title align-items-center">
+                        <div class="col-12">
+                          <div class="row">
+                            <div class="col-12">
+                              <div class="text mb-3">
+                                <!-- <h4 class="mb-1 mt-0"><i class='uil uil-users-alt'></i>Constructor Details</h4> -->
+                              </div>
+                            </div>
+                          </div>
+                            <div class="formbox p-5" style="background-color:white; padding:15px; width:100%; ">
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                  <h4 class="mb-1 mt-0">
+                                    <h3 style="color: red;display: inline; " >*</h3>
+                                    Fields are Mandatory
+                                 </h4>
+                                        <form class="needs-validation" (ngSubmit)="Submit12()" [formGroup]="Constructorform" >
+                                          <br>
+                                          <div class="row pb-4">
+                                            <div class="col-lg-2">
+                                              <div><span class="text-danger">* </span> Constructor Name</div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                              <input type="text" class="form-control" placeholder="Constructor_Name" formControlName="constname" [ngClass]="{'is-invalid': submit12 && form12.constname.errors}">
+                                              <div *ngIf="submit12 && form12.constname.errors?.required" class="text-danger">
+                                                  Please provide a Constructor Name.
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="row pb-4">
+                                            <div class="col-lg-2">
+                                              <div><span class="text-danger">* </span> Constructor Phone No</div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                              <input type="text" class="form-control" placeholder="Phone_No" formControlName="constphoneno" [ngClass]="{'is-invalid': submit12 && form12.constphoneno.errors}">
+                                              <div *ngIf="submit12 && form12.constphoneno.errors?.required" class="text-danger">
+                                                <span *ngIf="form12.constphoneno.errors.required">Please provide a Constructor Email ID.</span>
+                                                <span *ngIf="form12.constphoneno.errors.pattern">Enter Proper Format </span>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="row pb-4">
+                                            <div class="col-lg-2">
+                                              <div><span class="text-danger">* </span> Constructor Email ID</div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                              <input type="text" class="form-control" placeholder="Email" formControlName="constemail" [ngClass]="{'is-invalid': submit12 && form12.constemail.errors}">
+                                              <div *ngIf="submit12 && form12.constemail.errors?.required" class="text-danger">
+                                                <span *ngIf="form12.constemail.errors.required">Please provide a Constructor Email ID.</span>
+                                                <span *ngIf="form12.constemail.errors.pattern">Enter Proper Email ID Format </span>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="row pb-4">
+                                            <div class="col-lg-2">
+                                              <div><span class="text-danger">* </span> Address</div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                              <input type="text" class="form-control" placeholder="Address" formControlName="constaddress" [ngClass]="{'is-invalid': submit12 && form12.constaddress.errors}">
+                                              <div *ngIf="submit12 && form12.constaddress.errors?.required" class="text-danger">
+                                                Please provide a Address.
+                                            </div>
+                                            </div>
+                                          </div>
+                                          <div class="row pb-4">
+                                            <div class="buttons col-lg-3 text-center box mb-3" style="display:inline-block;width:100%">
+                                               <button class="btn btn-info mr-3" type="submit" >Save</button>
+                                               <button class="btn btn-secondary ">New</button>
+                                            </div>
+                                         </div>
+                  
+                                        </form>
+                              
+                                </div>
+                                 
+                                
+                                
+                            </div>
+                  
+                             
+                            
+                            
+                            
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                   
+                </ng-template>
+              </ngb-tab>
+              <ngb-tab title="Details" class="nav nav-pills navtab-bg">
+                <ng-template ngbTabContent class="nav-item">
+                   <!-- <h5 class="mt-3">Details</h5> -->
+                  <div class="text mb-3">
+                    <!-- <h4 class="mb-1 mt-0"> Details</h4> -->
+                  </div>
+                 
+                  <div class="card p-5"  style="box-shadow: 0 10px 33px 0 rgba(78, 78, 78, 0.75);border-radius: 0px 0px 30px 30px;">
+                  
+                    <table class="table" >
+                      <thead style="background: #ff000054;" >
+                        <tr>
+                          <th>Department</th>
+                          <th>Description</th>
+                          <th>Edit</th>
+                          <th>Delete</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                        <tr *ngFor="let column of fetchDetailsRes | keyvalue ; index as i ">
+                          <td><span>{{column.value.departname}}</span></td>
+                          <td><span>{{column.value.description}}</span></td>
+                          <td> <button (click)="editDetails(column.value)">Edit</button></td>
+                          <td> <button (click)="deleteDetails(column.value.id)">Delete</button></td>
+                        </tr>
+                       
+                        <!-- <tr>
+                         
+                          <td>Managenment</td>
+                          <td>_</td>
+                          <td>
+                            <a href="javascript:void(0);" placement="bottom" ngbTooltip="Edit"
+                            class="btn btn-link text-muted btn-lg ">
+                            <i _ngcontent-ger-c22="" class="uil uil-pen"></i>
+                            </a>
+                          </td>
+                          <td>
+                            <a href="javascript:void(0);" placement="bottom" ngbTooltip="Delete"
+                            class="btn btn-link text-danger btn-lg ">
+                            <i class='uil uil-multiply font-size-14' ></i>
+                            </a>
+                        </td> -->
+                          
+                        <!-- </tr>
+                        <tr>
+                         
+                          <td>BBMP</td>
+                          <td>_</td>
+                          <td>
+                            <a href="javascript:void(0);" placement="bottom" ngbTooltip="Edit"
+                            class="btn btn-link text-muted btn-lg ">
+                            <i _ngcontent-ger-c22="" class="uil uil-pen"></i>
+                            </a>
+                          </td>
+                          <td>
+                            <a href="javascript:void(0);" placement="bottom" ngbTooltip="Delete"
+                            class="btn btn-link text-danger btn-lg ">
+                            <i class='uil uil-multiply font-size-14' ></i>
+                            </a>
+                        </td>
+                          
+                        </tr>
+                        <tr>
+                         
+                          <td>Engineering Section</td>
+                          <td>Engineering Dept</td>
+                          <td>
+                            <a href="javascript:void(0);" placement="bottom" ngbTooltip="Edit"
+                            class="btn btn-link text-muted btn-lg ">
+                            <i _ngcontent-ger-c22="" class="uil uil-pen"></i>
+                            </a>
+                          </td>
+                          <td>
+                            <a href="javascript:void(0);" placement="bottom" ngbTooltip="Delete"
+                            class="btn btn-link text-danger btn-lg ">
+                            <i class='uil uil-multiply font-size-14' ></i>
+                            </a>
+                        </td>
+                          
+                        </tr> -->
+                      </tbody>
+                      <tbody>
+                        
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                  <!-- end attachments -->
+                </ng-template>
+              </ngb-tab>
+            </ngb-tabset>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  

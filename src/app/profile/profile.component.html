@@ -1,0 +1,365 @@
+<div class="container-fluid">
+  <div> <br> <br> <br>  </div>
+  <div class="row">
+     <div class="col-lg-12">
+        <div class="card">
+           <div class="card-body">
+              <ngb-tabset type="pills"  class="navtab-bg " >
+                 <ngb-tab title="Designation">
+                    <ng-template ngbTabContent class="nav-item" style=" box-shadow: 0 2px 5px 0 rgba(78, 78, 78, 0.75);">
+                       <div class="container-fluid">
+                          <div class="row page-title align-items-center">
+                             <div class="col-12">
+                                <div class="row">
+                                   <div class="col-12">
+                                      <div class="text mb-3">
+                                         <!-- <h5 class="mb-1 mt-0"><i class='uil uil-users-alt'></i> Designation</h5> -->
+                                      </div>
+                                   </div>
+                                </div>
+                                <div class="formbox p-5" style="background-color:white; padding:15px; width:100%; ">
+                                 <!-- Form 1 Start -->
+                                  <form class="needs-validation" (ngSubmit)="Submit1()" [formGroup]="DesignationForm" >
+                                     
+                                    <div class="row pb-4">
+                                      <div class="col-lg-12">
+                                       <h4 class="mb-1 mt-0">
+                                          <h3 style="color: red;display: inline; " >*</h3>
+                                          Fields are Mandatory
+                                       </h4>
+                                      </div>
+                                    </div>
+                                    <div class="row pb-4">
+                                      <div class="col-lg-2">
+                                        <div><span class="text-danger">* </span> Department</div>
+                                      </div>
+                                      <div class="col-lg-3">
+                                        <select class="custom-select"  [ngClass]="{'is-invalid': submit1 && form1.department_name.errors?.required}"   formControlName="department_name" name="department_name" (change)="changeItem($event)">
+                                          <option value="" disabled>-Select-</option>
+                                          <option *ngFor="let item of selectValue_Des" [ngValue]="item">{{item}}</option>
+                                        </select>
+                                        <div *ngIf="submit1 && form1.department_name.errors?.required" class="text-danger">
+                                          Please select a Department.
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row pb-4">
+                                       <div class="col-lg-2">
+                                         <div><span class="text-danger">* </span> Designation</div>
+                                       </div>
+                                       <div class="col-lg-3">
+                                          <input type="text" class="form-control" placeholder="Designation" formControlName="designation" [ngClass]="{'is-invalid': submit1 && form1.designation.errors}">
+                                          <div *ngIf="submit1 && form1.designation.errors?.required" class="text-danger">
+                                             Please provide a Designation.
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="row pb-4">
+                                       <div class="col-lg-2">
+                                         <div><span class="text-danger">* </span> Description</div>
+                                       </div>
+                                       <div class="col-lg-3">
+                                          <input type="text" class="form-control" placeholder="Description" formControlName="description" [ngClass]="{'is-invalid': submit1 && form1.description.errors}">
+                                          <div *ngIf="submit1 && form1.description.errors?.required" class="text-danger">
+                                             Please provide a Description.
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class='row'>
+                                       <div class="buttons col-lg-3 text-center box mb-3" style="display:inline-block;width:100%">
+                                          <button class="btn btn-info mr-3" type="submit" >Save</button>
+                                          <button class="btn btn-secondary ">New</button>
+                                       </div>
+                                    </div>
+                                  </form>
+                                 <!-- Form 1 End  -->
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                    </ng-template>
+                 </ngb-tab>
+                 <ngb-tab title="Department">
+                    <ng-template ngbTabContent class="nav-item">
+                       <!-- <h5 class="mt-3">Department</h5> -->
+                       <div class="container-fluid">
+                          <div class="row page-title align-items-center">
+                             <div class="col-12">
+                                <div class="row">
+                                   <div class="col-12">
+                                      <div class="text mb-3">
+                                         <!-- <h4 class="mb-1 mt-0"><i class='uil uil-users-alt'></i> Department</h4> -->
+                                      </div>
+                                   </div>
+                                </div>
+                                <div class="formbox p-5" style="background-color:white; padding:15px; width:100%; ">
+                                   <div class="row">
+                                      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                         <h4 class="mb-1 mt-0">
+                                            <h3 style="color: red;display: inline; " >*</h3>
+                                            Fields are Mandatory
+                                         </h4>
+                                         <form class="needs-validation" (ngSubmit)="Submit2()" [formGroup]="Departmentform">
+                                         <br>
+                                         <div class="row pb-4">
+                                          <div class="col-lg-2">
+                                            <div><span class="text-danger">* </span> Department</div>
+                                          </div>
+                                          <div class="col-lg-3">
+                                             <input type="text" class="form-control" placeholder="Department" formControlName="department_name" [ngClass]="{'is-invalid': submit2 && form2.department_name.errors}">
+                                             <div *ngIf="submit2 && form2.department_name.errors?.required" class="text-danger">
+                                                Please provide a Department.
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="row pb-4">
+                                          <div class="col-lg-2">
+                                            <div><span class="text-danger">* </span> Description</div>
+                                          </div>
+                                          <div class="col-lg-3">
+                                             <input type="text" class="form-control" placeholder="Description" formControlName="description" [ngClass]="{'is-invalid': submit2 && form2.description.errors}">
+                                             <div *ngIf="submit2 && form2.description.errors?.required" class="text-danger">
+                                                Please provide a Description.
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="row pb-4">
+                                          <div class="buttons col-lg-3 text-center box mb-3" style="display:inline-block;width:100%">
+                                             <button class="btn btn-info mr-3" type="submit" >Save</button>
+                                             <button class="btn btn-secondary ">New</button>
+                                          </div>
+                                       </div>
+                                       </form>
+                                      </div>
+                                   </div>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                    </ng-template>
+                 </ngb-tab>
+                 <ngb-tab title="Street">
+                    <ng-template ngbTabContent class="nav-item">
+                       <!-- <h5 class="mt-3">Street</h5> -->
+                       <div class="container-fluid">
+                          <div class="row page-title align-items-center">
+                             <div class="col-12">
+                                <div class="row">
+                                   <div class="col-12">
+                                      <div class="text mb-3">
+                                         <!-- <h4 class="mb-1 mt-0"><i class='uil uil-users-alt'></i> Street</h4> -->
+                                      </div>
+                                   </div>
+                                </div>
+                                <div class="formbox p-5" style="background-color:white; padding:15px; width:100%; ">
+                                   <div class="row">
+                                      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                         <h4 class="mb-1 mt-0">
+                                            <h3 style="color: red;display: inline; " >*</h3>
+                                            Fields are Mandatory
+                                         </h4>
+                                         <form class="needs-validation" (ngSubmit)="Submit3()" [formGroup]="Streetform" >
+                                         <br>
+                                         <div class="row pb-4">
+                                             <div class="col-lg-2">
+                                                <div><span class="text-danger">* </span> Zone</div>
+                                             </div>
+                                             <div class="col-lg-3">
+                                                <select class="custom-select"  [ngClass]="{'is-invalid': submit3 && form3.zone_name.errors?.required}"   formControlName="zone_name" name="zone_name" (change)="changeItem($event)">
+                                                   <option value="" disabled>-Select-</option>
+                                                   <option *ngFor="let item of selectValue_Str" [ngValue]="item">{{item}}</option>
+                                                 </select>
+                                                 <div *ngIf="submit3 && form3.zone_name.errors?.required" class="text-danger">
+                                                   Please select a Zone.
+                                                 </div>
+                                             </div>
+                                         </div>
+                                         <div class="row pb-4">
+                                             <div class="col-lg-2">
+                                                <div><span class="text-danger">* </span> Ward</div>
+                                             </div>
+                                             <div class="col-lg-3">
+                                                <select class="custom-select"  [ngClass]="{'is-invalid': submit3 && form3.ward_name.errors?.required}"   formControlName="ward_name" name="ward_name" (change)="changeItem($event)">
+                                                   <option value="" disabled>-Select-</option>
+                                                   <option *ngFor="let item of selectValue1_Str" [ngValue]="item">{{item}}</option>
+                                                 </select>
+                                                 <div *ngIf="submit3 && form3.ward_name.errors?.required" class="text-danger">
+                                                   Please select a Ward.
+                                                 </div>
+                                             </div>
+                                          </div>
+                                          <!-- <div class="row pb-4">
+                                             <div class="col-lg-2">
+                                                <div><span class="text-danger">* </span> Street</div>
+                                             </div>
+                                             <div class="col-lg-3">
+                                                <input type="text" class="form-control" placeholder="Street" formControlName="Street" [ngClass]="{'is-invalid': submit3 && form3.Street.errors}">
+                                                <div *ngIf="submit3 && form3.Street.errors?.required" class="text-danger">
+                                                   Please provide a Street.
+                                                </div>
+                                             </div>
+                                          </div> -->
+                                          <div class="row pb-4">
+                                             <div class="col-lg-2">
+                                                <div><span class="text-danger">* </span> Description</div>
+                                             </div>
+                                             <div class="col-lg-3">
+                                                <input type="text" class="form-control" placeholder="Description" formControlName="description" [ngClass]="{'is-invalid': submit3 && form3.description.errors}">
+                                                <div *ngIf="submit3 && form3.description.errors?.required" class="text-danger">
+                                                   Please provide a Description.
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="row pb-4">
+                                             <div class="buttons col-lg-3 text-center box mb-3" style="display:inline-block;width:100%">
+                                                <button class="btn btn-info mr-3" type="submit" >Save</button>
+                                                <button class="btn btn-secondary ">New</button>
+                                             </div>
+                                          </div>
+                                         </form>
+                                      </div>
+                                   </div>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                    </ng-template>
+                 </ngb-tab>
+                 <ngb-tab title="Zone">
+                    <ng-template ngbTabContent class="nav-item">
+                       <!-- <h5 class="mt-3">Zone</h5> -->
+                       <div class="container-fluid">
+                          <div class="row page-title align-items-center">
+                             <div class="col-12">
+                                <div class="row">
+                                   <div class="col-12">
+                                      <div class="text mb-3">
+                                         <!-- <h4 class="mb-1 mt-0"><i class='uil uil-users-alt'></i> Zone</h4> -->
+                                      </div>
+                                   </div>
+                                </div>
+                                <div class="formbox p-5" style="background-color:white; padding:15px; width:100%; ">
+                                   <div class="row">
+                                      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                         <h4 class="mb-1 mt-0">
+                                            <h3 style="color: red;display: inline; " >*</h3>
+                                            Fields are Mandatory
+                                         </h4>
+                                         <form class="needs-validation" (ngSubmit)="Submit4()" [formGroup]="Zoneform" >
+                                         <br>
+                                         <div class="row pb-4">
+                                             <div class="col-lg-2">
+                                                <div><span class="text-danger">* </span> Zone</div>
+                                             </div>
+                                             <div class="col-lg-3">
+                                                <input type="text" class="form-control" placeholder="Zone" formControlName="zone_name" [ngClass]="{'is-invalid': submit4 && form4.zone_name.errors}">
+                                                <div *ngIf="submit4 && form4.zone_name.errors?.required" class="text-danger">
+                                                   Please provide a Zone.
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="row pb-4">
+                                             <div class="col-lg-2">
+                                                <div><span class="text-danger">* </span> Description</div>
+                                             </div>
+                                             <div class="col-lg-3">
+                                                <input type="text" class="form-control" placeholder="Description" formControlName="description" [ngClass]="{'is-invalid': submit4 && form4.description.errors}">
+                                                <div *ngIf="submit4 && form4.description.errors?.required" class="text-danger">
+                                                   Please provide a Description.
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="row pb-4">
+                                             <div class="buttons col-lg-3 text-center box mb-3" style="display:inline-block;width:100%">
+                                                <button class="btn btn-info mr-3" type="submit" >Save</button>
+                                                <button class="btn btn-secondary ">New</button>
+                                             </div>
+                                          </div>
+                                         </form>
+                                      </div>
+                                   </div>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                    </ng-template>
+                 </ngb-tab>
+                 <ngb-tab title="Ward">
+                    <ng-template ngbTabContent class="nav-item">
+                       <!-- <h5 class="mt-3">Ward</h5> -->
+                       <div class="container-fluid">
+                          <div class="row page-title align-items-center">
+                             <div class="col-12">
+                                <div class="row">
+                                   <div class="col-12">
+                                      <div class="text mb-3">
+                                         <!-- <h4 class="mb-1 mt-0"><i class='uil uil-users-alt'></i>Ward</h4> -->
+                                      </div>
+                                   </div>
+                                </div>
+                                <div class="formbox p-5" style="background-color:white; padding:15px; width:100%; ">
+                                   <div class="row">
+                                      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                         <h4 class="mb-1 mt-0">
+                                            <h3 style="color: red;display: inline; " >*</h3>
+                                            Fields are Mandatory
+                                         </h4>
+                                         <form class="needs-validation" (ngSubmit)="Submit5()" [formGroup]="Wardform" >
+                                         <br>
+                                         <div class="row pb-4">
+                                             <div class="col-lg-2">
+                                                <div><span class="text-danger">* </span> Zone</div>
+                                             </div>
+                                             <div class="col-lg-3">
+                                                <select class="custom-select"  [ngClass]="{'is-invalid': submit5 && form5.zone_name.errors?.required}"   formControlName="zone_name" name="zone_name" (change)="changeItem($event)">
+                                                   <option value="" disabled>-Select-</option>
+                                                   <option *ngFor="let item of selectValue_War" [ngValue]="item">{{item}}</option>
+                                                </select>
+                                                <div *ngIf="submit5 && form5.zone_name.errors?.required" class="text-danger">
+                                                   Please select a Zone.
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="row pb-4">
+                                             <div class="col-lg-2">
+                                               <div><span class="text-danger">* </span> Ward</div>
+                                             </div>
+                                             <div class="col-lg-3">
+                                                <input type="text" class="form-control" placeholder="Ward" formControlName="ward_name" [ngClass]="{'is-invalid': submit5 && form5.ward_name.errors}">
+                                                <div *ngIf="submit5 && form5.ward_name.errors?.required" class="text-danger">
+                                                   Please provide a Ward.
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="row pb-4">
+                                             <div class="col-lg-2">
+                                               <div><span class="text-danger">* </span> Description</div>
+                                             </div>
+                                             <div class="col-lg-3">
+                                                <input type="text" class="form-control" placeholder="Description" formControlName="description" [ngClass]="{'is-invalid': submit5 && form5.description.errors}">
+                                                <div *ngIf="submit5 && form5.description.errors?.required" class="text-danger">
+                                                   Please provide a Description.
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="row pb-4">
+                                             <div class="buttons col-lg-3 text-center box mb-3" style="display:inline-block;width:100%">
+                                                <button class="btn btn-info mr-3" type="submit" >Save</button>
+                                                <button class="btn btn-secondary ">New</button>
+                                             </div>
+                                          </div>
+                                         </form>
+                                      </div>
+                                   </div>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                    </ng-template>
+                 </ngb-tab>
+              </ngb-tabset>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>

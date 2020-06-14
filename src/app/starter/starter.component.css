@@ -1,0 +1,11 @@
+.formbox{
+    box-shadow: 0 10px 33px 0 rgba(78, 78, 78, 0.75);
+    border-radius: 24px;
+}
+.btn{
+    box-shadow: 0 10px 33px 0 rgba(78, 78, 78, 0.75);
+    }
+.width{
+    flex: 1 1 auto;
+   
+}
